@@ -1,0 +1,213 @@
+\documentclass[12pt,letterpaper]{article}
+
+% just for the example
+\usepackage{lipsum}
+% Set margins to 1.5in
+\usepackage[margin=.8 in]{geometry}
+
+% for graphics
+\usepackage{graphicx}
+
+% for colors
+\usepackage[dvipsnames]{xcolor}
+% for crimson text
+\usepackage{crimson}
+\usepackage[T1]{fontenc}
+
+% setup parameter indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% for 1.15 spacing between text
+\renewcommand{\baselinestretch}{.8}
+
+% For defining spacing between headers
+\usepackage{titlesec}
+% Level 1
+\titleformat{\section}
+  {\normalfont\fontsize{18}{0}\bfseries}{\thesection}{1em}{}
+% Level 2
+\titleformat{\subsection}
+  {\normalfont\fontsize{14}{0}\bfseries}{\thesection}{1em}{}
+% Level 3
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{12}{0}\bfseries}{\thesection}{1em}{}
+% Level 4
+\titleformat{\paragraph}
+  {\normalfont\fontsize{12}{0}\bfseries\itshape}{\theparagraph}{1em}{}
+% Level 5
+\titleformat{\subparagraph}
+  {\normalfont\fontsize{12}{0}\itshape}{\theparagraph}{1em}{}
+% Level 6
+\makeatletter
+\newcounter{subsubparagraph}[subparagraph]
+\renewcommand\thesubsubparagraph{%
+  \thesubparagraph.\@arabic\c@subsubparagraph}
+\newcommand\subsubparagraph{%
+  \@startsection{subsubparagraph}    % counter
+    {6}                              % level
+    {\parindent}                     % indent
+    {10pt} % beforeskip
+    {4pt}                           % afterskip
+    {\normalfont\fontsize{10}{0}}}
+\newcommand\l@subsubparagraph{\@dottedtocline{6}{10em}{5em}}
+\newcommand{\subsubparagraphmark}[1]{}
+\makeatother
+\titlespacing*{\section}{0pt}{8pt}{2pt}
+\titlespacing*{\subsection}{0pt}{8pt}{2pt}
+\titlespacing*{\subsubsection}{0pt}{8pt}{2pt}
+\titlespacing*{\paragraph}{0pt}{8pt}{2pt}
+\titlespacing*{\subparagraph}{0pt}{8pt}{2pt}
+\titlespacing*{\subsubparagraph}{0pt}{8pt}{2pt}
+
+% Set caption to correct size and location
+\usepackage[tableposition=top, figureposition=bottom, font=footnotesize, labelfont=bf]{caption}
+
+% set page number location
+\usepackage{fancyhdr}
+\fancyhf{} % clear all header and footers
+\renewcommand{\headrulewidth}{0pt} % remove the header rule
+\rhead{\thepage}
+\pagestyle{fancy}
+
+% Overwrite Title
+\makeatletter
+\renewcommand{\maketitle}{\bgroup
+   \begin{center}
+   \textbf{{\fontsize{10pt}{12}\selectfont \@title}}\\
+   \vspace{8pt}
+   {\fontsize{10pt}{0}\selectfont \@author} 
+   \end{center}
+}
+\makeatother
+
+% Used for Tables and Figures
+\usepackage{float}
+
+% For using lists
+\usepackage{enumitem}
+
+% For full citations inline
+\usepackage{bibentry}
+\nobibliography*
+
+% Custom Quote
+\newenvironment{myquote}[1]%
+  {\list{}{\leftmargin=#1\rightmargin=#1}\item[]}%
+  {\endlist}
+  
+% Create Abstract 
+\renewenvironment{abstract}
+{\vspace*{-1in}\fontsize{6pt}{8}\begin{myquote}{1in}
+\noindent \par{\bfseries \abstractname.}}
+{\medskip\noindent
+\end{myquote}
+}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set Title, Author, and email
+\title{Brief Description Relevant Papers}
+\author{Carolina Concha-Arriagada \\ cc1599@georgetown.edu}
+
+\maketitle
+\thispagestyle{fancy}
+
+%\section*{Literature Review}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PAPER 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Can Smallholder Extension Transform African Agriculture?}
+\subsection*{Deutschmann, Duru, Siegal and Tjernstrom (2019) \\ NBER WP 26054}
+
+\subsubsection*{Abstract} 
+\noindent Agricultural productivity in Sub-Saharan Africa (SSA) lags far behind all other regions of the world. A long list of policy experiments has yielded more evidence on what fails than on what works. We analyze a randomized control trial of a rare scaled-up success story: One Acre Fund’s small farmer program. Much like anti-poverty "graduation" interventions, the program aims to relax multiple constraints to productivity simultaneously. We show that participation causes statistically and economically significant increases in output, yields, and profits. In our preferred specification, maize production increases by 24\% and profits by 16\%. We find little evidence of heterogeneous treatment effects on yields, but observe some attenuation of impacts on total output and profits at the top end of the distribution.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Program's Description}
+
+\noindent They evaluate a program called "One Acre Fund's (1AF) small-farmer programs". Participating farmers receive training on improved farming practices, input loans, and crop insurance.
+
+\noindent 1AF is located across 6 different countries in Eastern and Southern Africa. The NGO’s core “market bundle” provides farmer groups with group-liability loans for improved seeds and high-quality fertilizer, regular trainings on modern agricultural techniques, crop and funeral index-based insurance, and market facilitation support to help farmers sell their products for higher prices.
+
+\noindent Farmer groups are organized by geographical areas that can be served by a single 1AF officer, and they typically range in size from 8-12 farmers.
+
+\noindent This RCT was conducted in western Kenya, where 1AF has operated for more than ten years and reached over 200,000 enrollees in 2016.
+
+\noindent The main crop in Kenya is maize, a staple crop that is important both to the economy and to food security. Accordingly, a large share of 1AF’s efforts are devoted to the crop. Seventy percent of Kenya’s maize is produced by smallholders who farm between 0.2 and 3 hectares (Government of Kenya, 2010, pg. 11-12).
+
+\begin{itemize}
+  \item Located in the Teso region.
+  \item Participants self-selected into farmer groups of 8-12 farmers.
+  \item The randomization took place at the level of a cluster of 2-4 of these joint-liability farmer groups.
+  \item The specific villages selected for study inclusion had never been offered the 1AF program, but neighboring villages had previously been offered the program.
+  \item Baseline data collection occurred in November and December of 2016.
+  \item The public lottery, which assigned clusters of farmer groups to treatment, took place in January 2017. 
+\end{itemize}
+
+\subsubsection*{Outcomes of Interest}
+\noindent Main outcomes: pre-registered
+\begin{enumerate}
+	\item \textbf{Total maize output}: it measures the overall output on farmers’ maize land. For treatment, it measures the overall output on farmers’ maize land. For treatment, total maize production is the sum of harvests on their enrolled and non-enrolled plot.
+	\item \textbf{Program maize yields}: they compare yields on treatment farmers’ enrolled plot to control farmers’ overall per-acre yields \footnote{The relevant measures of harvests and land sizes are observed, rather than based on farmer self-reports. Land sizes were measured by GPS readings.}.
+	\item \textbf{Profits}: it is the projected value of the output less farmers’ costs
+\end{enumerate}
+
+\noindent Intermediate outcomes: behavioral change
+\begin{enumerate}
+  \item land preparation: emphasizing the timing of planting relative to the onset of rains for the season
+  \item input application: focusing on the use of hybrid seeds and fertilizer, both with respect to the type of fertilizer and the timing of different fertilizer applications
+  \item proper spacing between rows of plants and of plants within a row
+\end{enumerate}
+
+\subsubsection*{Covariates}
+\begin{itemize}
+  \item Binary vbles
+    \begin{enumerate}
+      \item Married (0/1)
+      \item Household head has secondary school
+      \item Household income >50\% from farm labor
+      \item Used improved ag technology in 2016
+      \item Reports knowledge of 1AF practices
+      \item Intercropped maize and beans in 2016
+      \item Reports having credit access in 2016
+    \end{enumerate}
+  \item Cont's vbles
+    \begin{enumerate}
+      \item Hhold size
+      \item Acres under maize cultivation in 2016
+      \item Maize yield (kg/acre) in 2016
+    \end{enumerate}
+ \end{itemize}
+ 
+\subsubsection*{Empirical Strategy}
+
+\noindent Main regression:
+
+\begin{equation}
+y_{is} = \alpha+ \beta T_{is} +\delta X_{is} +\gamma_s + \varepsilon_{is} 
+\end{equation}
+
+\noindent Where $T_{is}$ is the treatment dummy for individual $i$ in field officer area $s$. The estimation is clustered at the farmer group cluster level.
+  
+
+\subsubsection*{Main Results}
+
+\noindent General: (a little) evidence of heterogenous treatment effects on maize yields; (some) evidence of heterogeneous effects on total maize outputs and profits and lower effect in the tails; 
+\begin{itemize}
+  \item  ATEs: Participation in the 1AF program has an economically and statistically significant impact on maize yields, total output, and profit. The impact on program yields ranges between 25-28\% across the different samples and specifications, total output is 17-24\% greater in the treatment group, and profit impacts range between 8\% in the full sample with covariates to 16\% in the primary sample. 
+  \item Quantile analysis: the treatment effect is remarkably consistent across the distribution of program maize yields. For total maize production and profits, treatment effects for farmers at the top end of the output distribution are substantially lower
+  \item  
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
